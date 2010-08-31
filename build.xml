@@ -5,61 +5,56 @@
 
 	<!-- Global properties -->
 	<property environment="env"/>
-	<property name="env.SATIN_HOME" location=".." /> 
-    <property name="satin_lib" location="${env.SATIN_HOME}/lib" />
-	<property name="neobio_lib" location="neobio/lib" />
+	<property name="satin" location="../satin/lib" />
+	<property name="neobio" location="neobio/lib" />
 
-	<property name="src" location="src" />
-	<property name="tmp" location="tmp" />
-	<property name="lib" location="lib" />
 	<property name="java.debug.value" value="true" />
 
-	<path id="external_jars">
-		<fileset dir="${satin_lib}">
+	<property name="satin.classes" value="geneSequencing.divideAndConquer.DivCon,geneSequencing.Dsearch,geneSequencing.sharedObjects.SharedData,geneSequencing.sharedObjects.DivConSO,geneSequencing.masterWorker.MasterWorker geneSequencing.jar"/>
+	<path id="external.jars">
+		<fileset dir="${satin}">
 			<include name="*.jar" />
 		</fileset>
-		<fileset dir="${neobio_lib}">
+		<fileset dir="${neobio}">
 			<include name="neobio.jar" />
 		</fileset>
 	</path>
 
-	<target name="init">
+	<target name="build" depends="clean">
 		<!-- Create the time stamp -->
 		<tstamp />
 
 		<!-- Create the build directory structure used by compile -->
-		<mkdir dir="${lib}" />
-		<mkdir dir="${tmp}" />
-	</target>
+		<mkdir dir="lib" />
+		<mkdir dir="tmp" />
 
-	<target name="compile" depends="init" description="compile the source ">
 		<ant dir="neobio" inheritall="false" />
 
-		<!-- Compile the java code from ${src} into ${tmp} -->
-		<javac srcdir="${src}" destdir="${tmp}" debug="on" >
-			<classpath refid="external_jars" />
+		<!-- Compile the java code from src into tmp -->
+		<javac srcdir="src" destdir="tmp" debug="on" >
+			<classpath refid="external.jars" />
 		</javac>
 
-		</target>
+		<jar jarfile="lib/geneSequencing.jar" basedir="tmp" />
 
-	<target name="build" depends="clean,compile" description="build the JAR file">
-		<!-- Create the distribution directory -->
-		<mkdir dir="${lib}" />
+<java   classname="ibis.compile.Ibisc"
+                taskname="Ibisc"
+                dir="tmp"
+                failonerror="true"
+                maxmemory="512M"
+                fork="true">
+                <arg line="-satin &quot;${satin-classes}&quot; ."/>
+                <classpath refid="external.jars"/>
+        </java>
 
-		<jar jarfile="${lib}/geneSequencing.jar" basedir="${tmp}" />
-		<delete dir="${tmp}" />
 
-	<exec executable="/bin/sh">
-			  <arg value="rewrite.sh"/>
-				    </exec>
+		<delete dir="tmp" />
 
 	</target>
 
-	<target name="jar" depends="build"/>
-
 	<target name="clean" description="clean up">
-		<delete dir="${tmp}" />
-		<delete dir="${lib}" />
+		<delete dir="tmp" />
+		<delete dir="lib" />
 	</target>
 
 </project>
