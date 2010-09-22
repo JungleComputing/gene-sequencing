@@ -37,6 +37,15 @@
 
 		<jar jarfile="lib/geneSequencing.jar" basedir="tmp" />
 
+		<java   classname="ibis.compile.Ibisc"
+		                taskname="Ibisc"
+		                dir="tmp"
+		                failonerror="true"
+		                maxmemory="512M"
+		                fork="true">
+		                <arg line="-satin &quot;${satin-classes}&quot; ."/>
+		                <classpath refid="external.jars"/>
+		        </java>
 
 
 		<delete dir="tmp" />
