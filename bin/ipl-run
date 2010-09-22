@@ -6,7 +6,4 @@
 
 # Run ...
 # Note: this requires Java 6
-exec java \
-    -classpath "lib/"'*' \
-    -Dlog4j.configuration=file:log4j.properties \
-    "$@"
+exec java -cp external/*:lib/* -Dlog4j.configuration=file:log4j.properties "$@"

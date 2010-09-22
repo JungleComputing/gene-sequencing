@@ -4,4 +4,4 @@
 # IPL installation, specified in the $IPL_HOME environment variable.
 
 
-exec bin/ipl-run -Xmx256M ibis.server.Server "$@"
+exec bin/ipl-run -Xmx256M ibis.ipl.server.Server "$@"
