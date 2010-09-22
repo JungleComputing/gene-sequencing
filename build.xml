@@ -5,7 +5,7 @@
 
 	<!-- Global properties -->
 	<property environment="env"/>
-	<property name="satin" location="external/satin" />
+	<property name="satin" location="external" />
 	<property name="neobio" location="neobio/lib" />
 
 	<property name="java.debug.value" value="true" />
