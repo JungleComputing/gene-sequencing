@@ -4,19 +4,22 @@
     </description>
 
 	<!-- Global properties -->
-	<property environment="env"/>
+	<property environment="env" />
 	<property name="satin" location="external" />
 	<property name="neobio" location="neobio/lib" />
 
 	<property name="java.debug.value" value="true" />
 
-	<property name="satin.classes" value="geneSequencing.divideAndConquer.DivCon,geneSequencing.Dsearch,geneSequencing.sharedObjects.SharedData,geneSequencing.sharedObjects.DivConSO,geneSequencing.masterWorker.MasterWorker geneSequencing.jar"/>
+	<property name="satin.classes" value="geneSequencing.divideAndConquer.DivCon,geneSequencing.Dsearch,geneSequencing.sharedObjects.SharedData,geneSequencing.sharedObjects.DivConSO,geneSequencing.masterWorker.MasterWorker geneSequencing.jar" />
 	<path id="external.jars">
 		<fileset dir="${satin}">
 			<include name="*.jar" />
 		</fileset>
 		<fileset dir="${neobio}">
 			<include name="neobio.jar" />
+		</fileset>
+		<fileset dir="lib">
+			<include name="geneSequencing.jar" />
 		</fileset>
 	</path>
 
@@ -31,21 +34,22 @@
 		<ant dir="neobio" inheritall="false" />
 
 		<!-- Compile the java code from src into tmp -->
-		<javac srcdir="src" destdir="tmp" debug="on" >
+		<javac srcdir="src" destdir="tmp" debug="on">
 			<classpath refid="external.jars" />
 		</javac>
 
 		<jar jarfile="lib/geneSequencing.jar" basedir="tmp" />
 
-		<java   classname="ibis.compile.Ibisc"
-		                taskname="Ibisc"
-		                dir="tmp"
-		                failonerror="true"
-		                maxmemory="512M"
-		                fork="true">
-		                <arg line="-satin &quot;${satin-classes}&quot; ."/>
-		                <classpath refid="external.jars"/>
-		        </java>
+
+		<java classname="ibis.compile.Ibisc" taskname="Ibisc" failonerror="true" maxmemory="512M" fork="true">
+			<arg line="neobio/lib/neobio.jar" />
+			<classpath refid="external.jars" />
+		</java>
+
+		<java classname="ibis.compile.Ibisc" taskname="Ibisc" failonerror="true" maxmemory="512M" fork="true">
+			<arg line="-satin &quot;${satin.classes}&quot; lib/geneSequencing.jar" />
+			<classpath refid="external.jars" />
+		</java>
 
 
 		<delete dir="tmp" />
