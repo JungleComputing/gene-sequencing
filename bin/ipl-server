@@ -1,7 +1,9 @@
 #!/bin/sh
 
-# This script is a convenience script to start the ipl registry server from the
-# IPL installation, specified in the $IPL_HOME environment variable.
+# This script is a convenience script to automatically set the correct
+# classpath for the IPL given the location of a IPL installation,
+# specified in the $IPL_HOME environment variable.
 
-
-exec bin/ipl-run -Xmx256M ibis.ipl.server.Server "$@"
+# Run ...
+# Note: this requires Java 6
+exec java -cp neobio/lib/*:external/*:lib/* -Dlog4j.configuration=file:log4j.properties ibis.ipl.server.Server "$@"
