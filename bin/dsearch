@@ -28,4 +28,4 @@ done
 
 
 
-exec java -cp neobio/lib/*:external/*:lib/* -Dlog4j.configuration=file:log4j.properties $SPECIAL geneSequencing.Dsearch $NORMAL
+exec java -Xmx1024M -cp neobio/lib/*:external/*:lib/* -Dlog4j.configuration=file:log4j.properties $SPECIAL geneSequencing.Dsearch $NORMAL

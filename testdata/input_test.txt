@@ -20,7 +20,7 @@ database.file = testdata/test.fasta
 #----------------------------------Querys file-----------------------------------------------------
 #name of query sequence file
 
-query.file = testdata/set03q.fasta
+query.file = testdata/set01q.fasta
 
 #----------------------------------Number of scores returned---------------------------------------
 
