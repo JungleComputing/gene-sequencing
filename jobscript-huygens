@@ -9,30 +9,27 @@
 #
 # @ job_type = parallel
 #
-# @ wall_clock_limit = 0:10:00
+# @ node = 40
+# @ wall_clock_limit = 1:00:00
+# @ queue
+#
+# @ node = 20
+# @ wall_clock_limit = 2:00:00
+# @ queue
+#
+# @ node = 10
+# @ wall_clock_limit = 4:00:00
+# @ queue
+#
+# @ node = 5
+# @ wall_clock_limit = 8:00:00
+# @ queue
 #
 # @ node = 1
+# @ wall_clock_limit = 20:00:00
 # @ queue
 #
-# @ node = 2
-# @ queue
-#
-# @ node = 4
-# @ queue
-#
-# @ node = 8
-# @ queue
-#
-# @ node = 16
-# @ queue
-#
-# @ node = 32
-# @ queue
-#
-# @ node = 64
-# @ queue
-
-SERVER_ADDRESS_FILE=${LOADL_STEP_IN}_server.address
+SERVER_ADDRESS_FILE=${LOADL_STEP_OUT}_server.address
 
 echo ./bin/ipl-server --events --hub-address-file $SERVER_ADDRESS_FILE&
 ./bin/ipl-server --events --hub-address-file $SERVER_ADDRESS_FILE&
@@ -43,7 +40,7 @@ SERVER_ADDRESS=`cat $SERVER_ADDRESS_FILE`
 #HUB_ADDRESS=`cat hub_address`
 
 for i in `cat $LOADL_HOSTFILE | sort -u` ; do
-ssh $i ./gene-sequencing/bin/dsearch-par-32 -Dibis.pool.name=genes -Dibis.server.address=$SERVER_ADDRESS testdata/input_test-huygens.txt dc -dump& 
+ssh $i ./gene-sequencing/bin/dsearch-par-32 -Dsatin.keepIntraConnections=false -Dsatin.throttleSteals=true -Dibis.server.is.hub=false -Dibis.pool.name=genes -Dibis.server.address=$SERVER_ADDRESS testdata/input_test-100M.txt dc -dump& 
 done
 
 #wait for the last ssh connection started, nothing else

@@ -35,6 +35,7 @@ for i in {1..32} ; do
 
 java -Xmx4000M -cp neobio/lib/*:external/*:lib/* -Dlog4j.configuration=file:log4j.properties $SPECIAL geneSequencing.Dsearch $NORMAL&
 
+sleep 10
 done
 
 
