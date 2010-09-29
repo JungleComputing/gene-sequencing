@@ -1,0 +1,46 @@
+Ibis server running on 192.168.153.91/192.168.145.93-8888#be.c0.8e.95.cd.7a.00.00.27.6b.00.23.ae.fc.6d.60~ndrost
+List of Services:
+    Bootstrap service on virtual port 303
+    Central Registry service on virtual port 302
+    Management service on virtual port 304
+Known hubs now: 192.168.153.91/192.168.145.93-8888#be.c0.8e.95.cd.7a.00.00.27.6b.00.23.ae.fc.6d.60~ndrost
+02:53:29 Central Registry: creating new pool: "genes"
+02:53:29 Central Registry: (Ibis 0, location gb-r5n25@irc@sara@nl) joined pool "genes" now 1 members
+02:53:29 Central Registry: (Ibis 1, location gb-r5n25@irc@sara@nl) joined pool "genes" now 2 members
+02:53:29 Central Registry: (Ibis 2, location gb-r5n25@irc@sara@nl) joined pool "genes" now 3 members
+02:53:29 Central Registry: (Ibis 3, location gb-r5n25@irc@sara@nl) joined pool "genes" now 4 members
+02:53:29 Central Registry: (Ibis 4, location gb-r5n25@irc@sara@nl) joined pool "genes" now 5 members
+02:53:29 Central Registry: (Ibis 5, location gb-r5n25@irc@sara@nl) joined pool "genes" now 6 members
+02:53:29 Central Registry: (Ibis 6, location gb-r5n25@irc@sara@nl) joined pool "genes" now 7 members
+02:53:29 Central Registry: (Ibis 7, location gb-r5n25@irc@sara@nl) joined pool "genes" now 8 members
+02:53:29 Central Registry: (Ibis 0, location gb-r5n25@irc@sara@nl) won election "satin irc@sara@nl cluster coordinator" in pool "genes"
+02:53:29 Central Registry: (Ibis 4, location gb-r5n25@irc@sara@nl) won election "satin.master" in pool "genes"
+start: free = 360 max = 1777 total = 361
+query loaded: free = 358 max = 1777 total = 361
+database loaded: free = 353 max = 1777 total = 361
+02:53:30 Central Registry: (Ibis 8, location gb-r5n14@irc@sara@nl) joined pool "genes" now 9 members
+02:53:30 Central Registry: (Ibis 9, location gb-r5n14@irc@sara@nl) joined pool "genes" now 10 members
+02:53:30 Central Registry: (Ibis 10, location gb-r5n14@irc@sara@nl) joined pool "genes" now 11 members
+02:53:30 Central Registry: (Ibis 11, location gb-r5n14@irc@sara@nl) joined pool "genes" now 12 members
+02:53:30 Central Registry: (Ibis 12, location gb-r5n14@irc@sara@nl) joined pool "genes" now 13 members
+02:53:30 Central Registry: (Ibis 13, location gb-r5n14@irc@sara@nl) joined pool "genes" now 14 members
+02:53:30 Central Registry: (Ibis 14, location gb-r5n14@irc@sara@nl) joined pool "genes" now 15 members
+02:53:30 Central Registry: (Ibis 15, location gb-r5n14@irc@sara@nl) joined pool "genes" now 16 members
+done: free = 596 max = 1777 total = 626
+03:16:47 Central Registry: (Ibis 0, location gb-r5n25@irc@sara@nl) left pool "genes" now 15 members
+03:16:47 Central Registry: (Ibis 3, location gb-r5n25@irc@sara@nl) left pool "genes" now 14 members
+03:16:47 Central Registry: (Ibis 1, location gb-r5n25@irc@sara@nl) left pool "genes" now 13 members
+03:16:47 Central Registry: (Ibis 6, location gb-r5n25@irc@sara@nl) left pool "genes" now 12 members
+03:16:47 Central Registry: (Ibis 11, location gb-r5n14@irc@sara@nl) left pool "genes" now 11 members
+03:16:47 Central Registry: (Ibis 9, location gb-r5n14@irc@sara@nl) left pool "genes" now 10 members
+03:16:47 Central Registry: (Ibis 10, location gb-r5n14@irc@sara@nl) left pool "genes" now 9 members
+03:16:47 Central Registry: (Ibis 8, location gb-r5n14@irc@sara@nl) left pool "genes" now 8 members
+03:16:47 Central Registry: (Ibis 5, location gb-r5n25@irc@sara@nl) left pool "genes" now 7 members
+03:16:47 Central Registry: (Ibis 2, location gb-r5n25@irc@sara@nl) left pool "genes" now 6 members
+03:16:47 Central Registry: (Ibis 4, location gb-r5n25@irc@sara@nl) left pool "genes" now 5 members
+03:16:47 Central Registry: (Ibis 13, location gb-r5n14@irc@sara@nl) left pool "genes" now 4 members
+03:16:47 Central Registry: (Ibis 12, location gb-r5n14@irc@sara@nl) left pool "genes" now 3 members
+03:16:47 Central Registry: (Ibis 14, location gb-r5n14@irc@sara@nl) left pool "genes" now 2 members
+03:16:47 Central Registry: (Ibis 7, location gb-r5n25@irc@sara@nl) left pool "genes" now 1 members
+03:16:47 Central Registry: (Ibis 15, location gb-r5n14@irc@sara@nl) left pool "genes" now 0 members
+03:16:47 Central Registry: pool "genes" ended
