@@ -1,0 +1,33 @@
+#PBS -lwalltime=2:00:00  
+                         # 2 hours wall-clock 
+                         # time allowed for this job
+#PBS -lnodes=4:ppn=1
+
+                         # 1 node for this job
+#PBS -S /bin/bash
+echo start of job in directory $PBS_O_WORKDIR
+echo number of nodes is $n
+echo the allocated nodes are:
+cat $PBS_NODEFILE
+cd /home/ndrost/gene-sequencing
+
+SERVER_ADDRESS_FILE=$PBS_JOBID-server.address
+
+echo ./bin/ipl-server --events --hub-address-file $SERVER_ADDRESS_FILE&
+./bin/ipl-server --events --hub-address-file $SERVER_ADDRESS_FILE&
+
+sleep 5
+
+SERVER_ADDRESS=`cat $SERVER_ADDRESS_FILE`
+#HUB_ADDRESS=`cat hub_address`
+
+for i in `cat $PBS_NODEFILE`  ; do
+ssh $i ./gene-sequencing/bin/dsearch-par-8 -Dibis.pool.name=genes -Dibis.server.address=$SERVER_ADDRESS testdata/input_test.txt dc -dump& 
+done
+
+#wait for the last ssh connection started, nothing else
+wait $!
+
+#./bin/dsearch -Dibis.pool.name=test -Dibis.server.address= \
+#-Dibis.hub.addresses=145.100.29.214-8888/192.168.146.14-8888~ndrost \
+#testdata/input_ddbjbct14.txt dc
