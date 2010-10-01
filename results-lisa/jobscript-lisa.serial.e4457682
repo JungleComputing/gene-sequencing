@@ -1,0 +1,16 @@
+Ibis server running on 192.168.146.229/10.10.10.10-8888#06.56.86.f7.cd.7a.00.00.5f.43.00.23.ae.fd.c4.16~ndrost
+List of Services:
+    Bootstrap service on virtual port 303
+    Central Registry service on virtual port 302
+    Management service on virtual port 304
+Known hubs now: 192.168.146.229/10.10.10.10-8888#06.56.86.f7.cd.7a.00.00.5f.43.00.23.ae.fd.c4.16~ndrost
+00:32:50 Central Registry: creating new pool: "genes"
+00:32:50 Central Registry: (Ibis 0, location gb-r33n4@irc@sara@nl) joined pool "genes" now 1 members
+00:32:50 Central Registry: (Ibis 0, location gb-r33n4@irc@sara@nl) won election "satin irc@sara@nl cluster coordinator" in pool "genes"
+00:32:50 Central Registry: (Ibis 0, location gb-r33n4@irc@sara@nl) won election "satin.master" in pool "genes"
+start: free = 359 max = 1777 total = 361
+query loaded: free = 359 max = 1777 total = 361
+database loaded: free = 353 max = 1777 total = 361
+done: free = 162 max = 1777 total = 189
+06:28:42 Central Registry: (Ibis 0, location gb-r33n4@irc@sara@nl) left pool "genes" now 0 members
+06:28:42 Central Registry: pool "genes" ended
