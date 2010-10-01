@@ -1,0 +1,27 @@
+# Start processes via ssh to all nodes :-(
+# @ tasks_per_node = 32
+# @ job_name = genes
+#
+# @ input = /dev/null
+# @ output = $(job_name).o$(jobid).$(stepid)
+# @ error = $(job_name).o$(jobid).$(stepid)
+# @ notification = never
+#
+# @ job_type = parallel
+#
+# @ node = 1
+# @ wall_clock_limit = 1:00:00
+# @ queue
+#
+SERVER_ADDRESS=130.37.31.83-8888~niels
+HUB_ADDRESS=145.100.26.152/145.100.18.152-8888/192.168.86.152/192.168.27.152/192.168.26.152/192.168.25.152/192.168.24.152/192.168.23.152/192.168.22.152/192.168.21.152/192.168.20.152-8888~ndrost
+
+for i in `cat $LOADL_HOSTFILE | sort -u` ; do
+sleep 8
+echo starting node $i
+ssh $i ./gene-sequencing/bin/dsearch-par-32 -Dibis.pool.name=genes -Dibis.server.address=$SERVER_ADDRESS -Dibis.hub.addresses=$HUB_ADDRESS -Dibis.location=$i@hugens testdata/input_01.txt dc -dump& 
+done
+
+#wait for the last ssh connection started, nothing else
+wait $!
+
