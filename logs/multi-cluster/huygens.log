@@ -1,26 +1,3 @@
-load SARA Compiler Wrappers (PATH).
-load IBM Java 5 SDK version 1.5 (JAVA_HOME PATH)
-load IBM XL C compiler version 10.1 (PATH, NLSPATH, MANPATH)
-load IBM XL C++ compiler version 10.1 (PATH, NLSPATH, MANPATH)
-load IBM XL Fortran compiler version 12.1 (PATH, NLSPATH, MANPATH)
-unload IBM Java 5 SDK version 1.5 (JAVA_HOME PATH)
-load IBM Java 6 SDK version 1.6 (JAVA_HOME PATH)
-load Apache Ant 1.7.1 (ANT_HOME, PATH)
-starting node p6010.huygens.sara.nl
-
-                 SARA Computing and Networking Services
-                            Huygens System
-
-   This is a private computer facility. Access for any reason must be
-   specifically authorized by the owner. Unless you are so authorized,
-   your continued access and any other use may expose you to criminal
-   and/or civil proceedings.
-
-unload IBM Java 5 SDK version 1.5 (JAVA_HOME PATH)
-load IBM Java 6 SDK version 1.6 (JAVA_HOME PATH)
-start: free = 3 max = 8000 total = 6
-query loaded: free = 2 max = 8000 total = 7
-database loaded: free = 6 max = 8000 total = 15
 4000 database Sequences, 2000 query sequences, threshold 5, implementation: dc
 maximum database sequence length = 656, maximum query sequence length = 483
 using divide and conquer implementation
@@ -28,14 +5,6 @@ done: free = 261 max = 8000 total = 285
 application genesequencing_dc took 522.64 sec
 
 The result has been printed in 0.694 sec
-16:34:26 WARN  [main] ibis.satin.comm - SATIN '(Ibis 15, location p6010.huygens.sara.nl@hugens)': port.close() throws exception (ignored), dest = (Ibis 70, location gb-r36n7@lisa)
-ibis.ipl.ConnectionClosedException: Closed a sendport port while a message is alive!
-	at ibis.ipl.impl.SendPort.close(SendPort.java:611)
-	at ibis.satin.impl.loadBalancing.Victim.close(Victim.java:187)
-	at ibis.satin.impl.communication.Communication.closeSendPorts(Communication.java:489)
-	at ibis.satin.impl.Satin.exit(Satin.java:205)
-	at ibis.satin.impl.Satin.exit(Satin.java:151)
-	at geneSequencing.Dsearch.main(Dsearch.java)
 -------------------------------SATIN STATISTICS--------------------------------
 SATIN: SPAWN:       1,048,575 spawns, 1,048,575 executed, 524,288 syncs
 SATIN: STEAL:       11,410,404 attempts, 2,610 successes (0.023 %)
