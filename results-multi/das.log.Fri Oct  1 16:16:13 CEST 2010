@@ -1,0 +1,29 @@
+Reservation number 1150953: Reserved 32 hosts for 900 seconds 
+Run on 32 hosts for 960 seconds from Fri Oct  1 16:16:15 2010
+: node072/0 node072/1 node072/2 node072/3 node005/0 node005/1 node005/2 node005/3 node011/0 node011/1 node011/2 node011/3 node017/0 node017/1 node017/2 node017/3 node051/0 node051/1 node051/2 node051/3 node024/0 node024/1 node024/2 node024/3 node068/0 node068/1 node068/2 node068/3 node044/0 node044/1 node044/2 node044/3 node019/0 node019/1 node019/2 node019/3 node071/0 node071/1 node071/2 node071/3 node028/0 node028/1 node028/2 node028/3 node078/0 node078/1 node078/2 node078/3 node055/0 node055/1 node055/2 node055/3 node047/0 node047/1 node047/2 node047/3 node056/0 node056/1 node056/2 node056/3 node045/0 node045/1 node045/2 node045/3 node007/0 node007/1 node007/2 node007/3 node013/0 node013/1 node013/2 node013/3 node065/0 node065/1 node065/2 node065/3 node083/0 node083/1 node083/2 node083/3 node074/0 node074/1 node074/2 node074/3 node054/0 node054/1 node054/2 node054/3 node043/0 node043/1 node043/2 node043/3 node030/0 node030/1 node030/2 node030/3 node040/0 node040/1 node040/2 node040/3 node038/0 node038/1 node038/2 node038/3 node060/0 node060/1 node060/2 node060/3 node062/0 node062/1 node062/2 node062/3 node016/0 node016/1 node016/2 node016/3 node053/0 node053/1 node053/2 node053/3 node064/0 node064/1 node064/2 node064/3 node069/0 node069/1 node069/2 node069/3 
+16:17:27 WARN  [main] ibis.satin.comm - SATIN '(Ibis 121, location node054@das3@cs@vu@nl@das)': unable to connect to (Ibis 38, location @HOSTNAME@das), might have crashed
+16:17:27 WARN  [main] ibis.satin.comm - SATIN '(Ibis 121, location node054@das3@cs@vu@nl@das)': Got exception during wa steal request: java.io.IOException: SATIN '(Ibis 121, location node054@das3@cs@vu@nl@das)': Could not connect to (Ibis 38, location @HOSTNAME@das)
+16:17:37 WARN  [main] ibis.satin.comm - SATIN '(Ibis 179, location node064@das3@cs@vu@nl@das)': unable to connect to (Ibis 36, location @HOSTNAME@das), might have crashed
+16:17:37 WARN  [main] ibis.satin.comm - SATIN '(Ibis 179, location node064@das3@cs@vu@nl@das)': Got exception during wa steal request: java.io.IOException: SATIN '(Ibis 179, location node064@das3@cs@vu@nl@das)': Could not connect to (Ibis 36, location @HOSTNAME@das)
+16:18:01 WARN  [DirectModule AcceptThread] ibis.smartsockets.virtual.misc - ConnectModule(Direct): Got exception during connection setup!
+java.net.SocketException: Broken pipe
+	at java.net.SocketOutputStream.socketWrite0(Native Method)
+	at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:92)
+	at java.net.SocketOutputStream.write(SocketOutputStream.java:115)
+	at ibis.smartsockets.virtual.modules.AbstractDirectModule.accept(AbstractDirectModule.java:72)
+	at ibis.smartsockets.virtual.modules.AbstractDirectModule.handleAccept(AbstractDirectModule.java:153)
+	at ibis.smartsockets.virtual.modules.direct.Direct.handleAccept(Direct.java:210)
+	at ibis.smartsockets.virtual.modules.direct.Direct$AcceptThread.run(Direct.java:42)
+16:18:37 WARN  [main] ibis.satin.comm - SATIN '(Ibis 101, location node019@das3@cs@vu@nl@das)': unable to connect to (Ibis 135, location node047@das3@cs@vu@nl@das), might have crashed
+16:18:39 WARN  [main] ibis.satin.ft - SATIN '(Ibis 121, location node054@das3@cs@vu@nl@das)': a timeout occurred while waiting for a wide-area steal reply from (Ibis 38, location @HOSTNAME@das), timeout = 121 seconds.
+16:18:44 WARN  [main] ibis.satin.comm - SATIN '(Ibis 116, location node045@das3@cs@vu@nl@das)': unable to connect to (Ibis 132, location node047@das3@cs@vu@nl@das), might have crashed
+16:18:51 WARN  [main] ibis.satin.comm - SATIN '(Ibis 140, location node083@das3@cs@vu@nl@das)': unable to connect to (Ibis 134, location node047@das3@cs@vu@nl@das), might have crashed
+16:18:56 WARN  [main] ibis.satin.comm - SATIN '(Ibis 111, location node013@das3@cs@vu@nl@das)': unable to connect to (Ibis 36, location @HOSTNAME@das), might have crashed
+16:18:56 WARN  [main] ibis.satin.comm - SATIN '(Ibis 111, location node013@das3@cs@vu@nl@das)': Got exception during wa steal request: java.io.IOException: SATIN '(Ibis 111, location node013@das3@cs@vu@nl@das)': Could not connect to (Ibis 36, location @HOSTNAME@das)
+16:18:59 WARN  [main] ibis.satin.comm - SATIN '(Ibis 128, location node045@das3@cs@vu@nl@das)': unable to connect to (Ibis 178, location node038@das3@cs@vu@nl@das), might have crashed
+16:19:08 WARN  [main] ibis.satin.comm - SATIN '(Ibis 154, location node040@das3@cs@vu@nl@das)': unable to connect to (Ibis 36, location @HOSTNAME@das), might have crashed
+16:19:08 WARN  [main] ibis.satin.comm - SATIN '(Ibis 154, location node040@das3@cs@vu@nl@das)': Got exception during wa steal request: java.io.IOException: SATIN '(Ibis 154, location node040@das3@cs@vu@nl@das)': Could not connect to (Ibis 36, location @HOSTNAME@das)
+16:19:16 WARN  [main] ibis.satin.comm - SATIN '(Ibis 156, location node011@das3@cs@vu@nl@das)': unable to connect to (Ibis 174, location node038@das3@cs@vu@nl@das), might have crashed
+16:19:17 WARN  [main] ibis.satin.comm - SATIN '(Ibis 193, location node040@das3@cs@vu@nl@das)': unable to connect to (Ibis 36, location @HOSTNAME@das), might have crashed
+16:19:17 WARN  [main] ibis.satin.comm - SATIN '(Ibis 193, location node040@das3@cs@vu@nl@das)': Got exception during wa steal request: java.io.IOException: SATIN '(Ibis 193, location node040@das3@cs@vu@nl@das)': Could not connect to (Ibis 36, location @HOSTNAME@das)
+16:19:17 WARN  [main] ibis.satin.comm - SATIN '(Ibis 79, location node005@das3@cs@vu@nl@das)': unable to connect to (Ibis 174, location node038@das3@cs@vu@nl@das), might have crashed
