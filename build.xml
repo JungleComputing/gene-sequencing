@@ -40,6 +40,17 @@
 
 		<jar jarfile="lib/geneSequencing.jar" basedir="tmp" />
 
+	<java classname="ibis.compile.Ibisc" taskname="Ibisc" failonerror="true" maxmemory="512M" fork="true">
+			<arg line="neobio/lib/neobio.jar" />
+			<classpath refid="external.jars" />
+		</java>
+ 
+		<java classname="ibis.compile.Ibisc" taskname="Ibisc" failonerror="true" maxmemory="512M" fork="true">
+			<arg line="-satin &quot;${satin.classes}&quot; lib/geneSequencing.jar" />
+			<classpath refid="external.jars" />
+		</java>
+ 
+
 
 
 
