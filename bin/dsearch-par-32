@@ -2,12 +2,14 @@
 
 cd $HOME/gene-sequencing
 
-# This script is a convenience script to automatically set the correct
-# classpath for the IPL given the location of a IPL installation,
-# specified in the $IPL_HOME environment variable.
+module unload java
+module load java/ibm/1.6
 
-# Run ...
-# Note: this requires Java 6
+#SERVER_ADDRESS_FILE=/tmp/server.address
+
+#./bin/ipl-server --hub-only --port 0 --hub-addresses $1 --hub-address-file $SERVER_ADDRESS_FILE&
+
+ulimit -n 8000
 
 NORMAL=
 SPECIAL=
@@ -28,14 +30,11 @@ do
         shift
 done
 
-module unload java
-module load java/ibm/1.6
 
 for i in {1..32} ; do
 
-java -Xmx4000M -cp neobio/lib/*:external/*:lib/* -Dlog4j.configuration=file:log4j.properties $SPECIAL geneSequencing.Dsearch $NORMAL&
+java -Xmx8000M -cp neobio/lib/*:external/*:lib/* -Dlog4j.configuration=file:log4j.properties $SPECIAL geneSequencing.Dsearch $NORMAL&
 
-sleep 10
 done
 
 

@@ -6,4 +6,4 @@
 
 # Run ...
 # Note: this requires Java 6
-exec java -cp neobio/lib/*:external/*:lib/* -Dlog4j.configuration=file:log4j.properties ibis.ipl.server.Server "$@"
+exec java -Xmx500M -cp neobio/lib/*:external/*:lib/* -Dlog4j.configuration=file:log4j.properties ibis.ipl.server.Server "$@"
