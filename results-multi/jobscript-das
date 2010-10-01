@@ -1,0 +1,6 @@
+#!/bin/bash
+
+SERVER_ADDRESS=130.37.31.83-8888~niels
+HUB_ADDRESS=130.37.197.2-6543/10.153.0.128/10.142.255.253/10.141.255.254-6543~ndrost
+
+prun -v -4 -np 4 -reserve 1150952 bin/dsearch -Dibis.pool.name=genes -Dibis.server.address=$SERVER_ADDRESS -Dibis.hub.addresses=$HUB_ADDRESS -Dibis.location.postfix=das testdata/input_01.txt dc -dump 2>&1 | tee "das.log.`date`"
