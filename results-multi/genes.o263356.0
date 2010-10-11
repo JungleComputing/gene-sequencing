@@ -1,0 +1,31 @@
+load SARA Compiler Wrappers (PATH).
+load IBM Java 5 SDK version 1.5 (JAVA_HOME PATH)
+load IBM XL C compiler version 10.1 (PATH, NLSPATH, MANPATH)
+load IBM XL C++ compiler version 10.1 (PATH, NLSPATH, MANPATH)
+load IBM XL Fortran compiler version 12.1 (PATH, NLSPATH, MANPATH)
+unload IBM Java 5 SDK version 1.5 (JAVA_HOME PATH)
+load IBM Java 6 SDK version 1.6 (JAVA_HOME PATH)
+load Apache Ant 1.7.1 (ANT_HOME, PATH)
+starting node p6003.huygens.sara.nl
+
+                 SARA Computing and Networking Services
+                            Huygens System
+
+   This is a private computer facility. Access for any reason must be
+   specifically authorized by the owner. Unless you are so authorized,
+   your continued access and any other use may expose you to criminal
+   and/or civil proceedings.
+
+unload IBM Java 5 SDK version 1.5 (JAVA_HOME PATH)
+load IBM Java 6 SDK version 1.6 (JAVA_HOME PATH)
+start: free = 3 max = 8000 total = 6
+query loaded: free = 3 max = 8000 total = 6
+database loaded: free = 44 max = 8000 total = 90
+7637 database Sequences, 400 query sequences, threshold 1, implementation: dc
+maximum database sequence length = 281244, maximum query sequence length = 479
+using divide and conquer implementation
+16:18:47 WARN  [main] ibis.satin.comm - SATIN '(Ibis 0, location p6003.huygens.sara.nl@hugens)': unable to connect to (Ibis 178, location node038@das3@cs@vu@nl@das), might have crashed
+16:18:47 WARN  [main] ibis.satin.comm - SATIN '(Ibis 0, location p6003.huygens.sara.nl@hugens)': Got exception during wa steal request: java.io.IOException: SATIN '(Ibis 0, location p6003.huygens.sara.nl@hugens)': Could not connect to (Ibis 178, location node038@das3@cs@vu@nl@das)
+16:19:00 WARN  [main] ibis.satin.comm - SATIN '(Ibis 28, location p6003.huygens.sara.nl@hugens)': unable to connect to (Ibis 36, location @HOSTNAME@das), might have crashed
+16:19:00 WARN  [main] ibis.satin.comm - SATIN '(Ibis 28, location p6003.huygens.sara.nl@hugens)': Got exception during wa steal request: java.io.IOException: SATIN '(Ibis 28, location p6003.huygens.sara.nl@hugens)': Could not connect to (Ibis 36, location @HOSTNAME@das)
+Killed by signal 15.

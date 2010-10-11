@@ -1,0 +1,37 @@
+# Start processes via ssh to all nodes :-(
+# @ tasks_per_node = 32
+# @ job_name = genes
+#
+# @ input = /dev/null
+# @ output = $(job_name).o$(jobid).$(stepid)
+# @ error = $(job_name).o$(jobid).$(stepid)
+# @ notification = never
+#
+# @ job_type = parallel
+#
+# @ node = 1
+# @ wall_clock_limit = 10:00:00
+# @ queue
+#
+SERVER_ADDRESS_FILE=${LOADL_STEP_OUT}_server.address
+
+echo ./bin/ipl-server --events --hub-address-file $SERVER_ADDRESS_FILE&
+./bin/ipl-server --events --hub-address-file $SERVER_ADDRESS_FILE&
+
+sleep 5
+
+SERVER_ADDRESS=`cat $SERVER_ADDRESS_FILE`
+#HUB_ADDRESS=`cat hub_address`
+
+for i in `cat $LOADL_HOSTFILE | sort -u` ; do
+sleep 8
+echo starting node $i
+ssh $i ./gene-sequencing/bin/dsearch-par-32 -Dibis.location=$i@$i -Dsatin.ft.naive=true -Dsatin.keepIntraConnections=false -Dibis.server.is.hub=false -Dsatin.so=false -Dsatin.throttleSteals=true -Dibis.pool.name=genes -Dibis.server.address=$SERVER_ADDRESS testdata/input_test-10M.txt dc -dump& 
+done
+
+#wait for the last ssh connection started, nothing else
+wait $!
+
+#./bin/dsearch -Dibis.pool.name=test -Dibis.server.address= \
+#-Dibis.hub.addresses=145.100.29.214-8888/192.168.146.14-8888~ndrost \
+#testdata/input_ddbjbct14.txt dc
