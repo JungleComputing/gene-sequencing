@@ -1,4 +1,4 @@
-#PBS -lwalltime=0:10:00  
+#PBS -lwalltime=0:30:00  
                          # 2 hours wall-clock 
                          # time allowed for this job
 #PBS -lnodes=128:ppn=1
@@ -22,8 +22,7 @@ SERVER_ADDRESS=`cat $SERVER_ADDRESS_FILE`
 #HUB_ADDRESS=`cat hub_address`
 
 for i in `cat $PBS_NODEFILE`  ; do
-ssh $i ./gene-sequencing/bin/dsearch-par-8 -Dibis.pool.name=genes -Dibis.server.address=$SERVER_ADDRESS -Dsatin.ft.naive=true -Dsatin.keepIntraConnections=false
--Dsatin.throttleSteals=true -Dibis.server.is.hub=false -Dsatin.so=false -Dsatin.maxConnections=0 testdata/input_test.txt dc -dump& 
+ssh $i ./gene-sequencing/bin/dsearch-par-8 -Dibis.pool.name=genes -Dibis.server.address=$SERVER_ADDRESS -Dsatin.ft.naive=true -Dsatin.keepIntraConnections=false -Dsatin.throttleSteals=true -Dibis.server.is.hub=false -Dsatin.so=false -Dsatin.maxConnections=0 testdata/input_test.txt dc -dump& 
 done
 
 #wait for the last ssh connection started, nothing else
