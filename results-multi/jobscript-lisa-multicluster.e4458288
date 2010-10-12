@@ -1,4 +1,0 @@
-The batch system is killing any remaining processes:
-su: Authentication failure
-(Ignored)
-/var/spool/torque/mom_priv/global.d/kill_user_procs: line 24:  6791 Killed                  su "$BATCH_USER" -c "/bin/kill -KILL -1"
