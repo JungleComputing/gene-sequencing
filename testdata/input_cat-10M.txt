@@ -15,7 +15,7 @@ scores.or.alignments = 2
 #----------------------------------Database file---------------------------------------------------
 #name of database file
 
-database.file = testdata/test-10M.fasta
+database.file = testdata/cat-10M.fasta
 
 #----------------------------------Querys file-----------------------------------------------------
 #name of query sequence file
